@@ -1,4 +1,3 @@
-# Prompt: create nginx pod with resources, livenesprobe, redinesprobe
 apiVersion: v1
 kind: Pod
 metadata:
