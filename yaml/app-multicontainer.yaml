@@ -1,5 +1,3 @@
-# The text describes a Kubernetes Pod specification for an application with two containers: Nginx and busybox. The Pod has a single volume named "html" which is mounted at different paths in each container. The Nginx container is mounted at /usr/share/nginx/html while the busybox container is mounted at /html. The busybox container runs a command that updates the index.html file every second with the current date, and sleeps for 1 second between iterations.
-
 apiVersion: v1
 kind: Pod
 metadata:
