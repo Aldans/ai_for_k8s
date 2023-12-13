@@ -1,4 +1,4 @@
-1. From my side, for testing the generation of Kubernetes manifest files, I used an alternative utility `ollama` and models: `llama2:7b, mistral`, as well as plugins for nvim like `gen.nvim`, `ogpt.nvim`, and also try `gpt4free`. My results are attached to the table below.
+1. For testing the generation of Kubernetes manifest files, I used an alternative utility `ollama` and models: `llama2:7b, mistral`, as well as plugins for nvim like `gen.nvim`, `ogpt.nvim`, and also try `gpt4free`. My results are attached to the table below.
 
 ![demo](./img/app-demo.gif)
 
