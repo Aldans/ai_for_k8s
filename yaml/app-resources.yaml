@@ -1,0 +1,32 @@
+# Prompt: create nginx pod with resources, livenesprobe, redinesprobe
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-pod
+  labels:
+    app: nginx
+spec:
+  containers:
+    - name: nginx
+      image: nginx:latest
+      ports:
+        - containerPort: 80
+      resources:
+        limits:
+          cpu: "1"
+          memory: "512Mi"
+        requests:
+          cpu: "0.5"
+          memory: "256Mi"
+      livenessProbe:
+        httpGet:
+          path: /healthz
+          port: 80
+        initialDelaySeconds: 5
+        periodSeconds: 10
+      readinessProbe:
+        httpGet:
+          path: /healthz
+          port: 80
+        initialDelaySeconds: 15
+        periodSeconds: 20

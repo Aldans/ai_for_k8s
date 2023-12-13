@@ -1,0 +1,18 @@
+# Prompt: create pod with volume mounts path hostpath, nginx app name frontend
+apiVersion: v1
+kind: Pod
+metadata:
+  name: frontend
+spec:
+  containers:
+  - name: nginx
+    image: nginx:1.23.45
+    ports:
+    - containerPort: 80
+    volumeMounts:
+    - name: frontend-data
+      mountPath: /etc/nginx
+  volumes:
+  - name: frontend-data
+    hostPath:
+      path: /path/to/frontend

@@ -1,0 +1,18 @@
+# Prompt: create cronjob repeat print hello world every 5 min, busybox
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: print-hello-world
+spec:
+  schedule: "*/5 * * *"
+  jobTemplate:
+    spec:
+      template:
+        metadata:
+          labels:
+            app: print-hello-world
+        spec:
+          containers:
+          - name: busybox
+            image: busybox
+            args: ["/bin/sh", "-c", "echo 'Hello, World!'"]

@@ -1,0 +1,18 @@
+# create job with ping 1.1.1.1 five times
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: ping-job
+spec:
+  template:
+    metadata:
+      labels:
+        app: ping-job
+    spec:
+      containers:
+      - name: ping-container
+        image: busybox
+        command: ["/bin/sh", "-c"]
+        args:
+        - "ping -c 5 1.1.1.1"
+      restartPolicy: Never
